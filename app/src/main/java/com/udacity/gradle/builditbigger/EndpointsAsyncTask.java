@@ -48,7 +48,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
         mOnPostTaskListener = (OnPostTaskListener) context;
 
         try {
-            return myApiService.sayHi("temporary \"Don't crash\" text").execute().getData();
+            return myApiService.getJoke().execute().getData();
         } catch (IOException e) {
             return e.getMessage();
         }
@@ -57,7 +57,7 @@ public class EndpointsAsyncTask extends AsyncTask<Context, Void, String> {
     @Override
     protected void onPostExecute(String result) {
         mOnPostTaskListener.onPostTask(result);
-        Toast.makeText(context, result, Toast.LENGTH_LONG).show();
+        //Toast.makeText(context, result, Toast.LENGTH_LONG).show();
     }
 
     public interface OnPostTaskListener{

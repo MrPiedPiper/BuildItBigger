@@ -2,4 +2,5 @@
     <string name="app_name">AndroidJokes</string>
 
     <string name="jokeId">jokeId</string>
+    <string name="joke_text_string">Loading...</string>
 </resources>

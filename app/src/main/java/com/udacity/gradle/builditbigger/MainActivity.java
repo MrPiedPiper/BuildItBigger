@@ -3,8 +3,8 @@ package com.udacity.gradle.builditbigger;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v4.util.Pair;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -14,7 +14,7 @@ import com.fancystachestudios.androidjokes.JokeActivity;
 import com.fancystachestudios.bakingapp.javajokes.JavaJoke;
 
 
-public class MainActivity extends ActionBarActivity implements EndpointsAsyncTask.OnPostTaskListener{
+public class MainActivity extends AppCompatActivity implements EndpointsAsyncTask.OnPostTaskListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,10 +46,11 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
     }
 
     public void tellJoke(View view){
+        /*
         JavaJoke javaJoke = new JavaJoke();
         Intent intent = new Intent(this, JokeActivity.class);
         intent.putExtra(getString(R.string.jokeId), javaJoke.getJoke());
-
+        */
         new EndpointsAsyncTask().execute(this);
 
         //startActivity(intent);
@@ -58,6 +59,12 @@ public class MainActivity extends ActionBarActivity implements EndpointsAsyncTas
 
     @Override
     public void onPostTask(String result) {
-        Toast.makeText(this, "I'm testing this", Toast.LENGTH_SHORT).show();
+
+        Intent intent = new Intent(this, JokeActivity.class);
+        intent.putExtra(getString(R.string.jokeId), result);
+
+        startActivity(intent);
+
+        //Toast.makeText(this, "I'm testing this", Toast.LENGTH_SHORT).show();
     }
 }
