@@ -1,4 +1,4 @@
-package com.udacity.gradle.builditbigger;
+package com.udacity.gradle.builditbigger.free;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -13,9 +13,11 @@ import android.view.View;
 
 import com.fancystachestudios.androidjokes.JokeActivity;
 import com.fancystachestudios.androidjokes.SimpleIdlingResource;
+import com.udacity.gradle.builditbigger.EndpointsAsyncTask;
+import com.udacity.gradle.builditbigger.R;
 
 
-public class MainActivity extends AppCompatActivity implements com.udacity.gradle.builditbigger.EndpointsAsyncTask.OnPostTaskListener{
+public class MainActivity extends AppCompatActivity implements EndpointsAsyncTask.OnPostTaskListener{
 
     @Nullable
     private SimpleIdlingResource mIdlingResource;
