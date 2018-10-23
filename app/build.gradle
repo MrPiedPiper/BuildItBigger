@@ -70,10 +70,9 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
 
     // Added for AdMob
-    freeImplementation 'com.google.android.gms:play-services:12.0.1'
+    freeImplementation 'com.google.android.gms:play-services-ads:12.0.1'
 
     implementation project(':androidjokes')
-    implementation project(':backend')
 
     endpointsServer project(path: ':backend', configuration: 'endpoints')
     implementation 'com.google.api-client:google-api-client:1.26.0'

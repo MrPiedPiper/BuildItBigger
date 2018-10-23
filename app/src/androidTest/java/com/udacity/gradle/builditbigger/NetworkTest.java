@@ -38,7 +38,7 @@ public class NetworkTest {
     @Test
     public void joke_received_test(){
         onView(withId(R.id.joke_button)).perform(click());
-        onView(withId(R.id.joke_text)).check(matches(not(withText("Loading..."))));
+        onView(withId(R.id.joke_text)).check(matches(not(withText(""))));
     }
 
 }
