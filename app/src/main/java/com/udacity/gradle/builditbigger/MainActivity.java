@@ -50,15 +50,7 @@ public class MainActivity extends AppCompatActivity implements com.udacity.gradl
     }
 
     public void tellJoke(View view){
-        /*
-        JavaJoke javaJoke = new JavaJoke();
-        Intent intent = new Intent(this, JokeActivity.class);
-        intent.putExtra(getString(R.string.jokeId), javaJoke.getJoke());
-        */
         new EndpointsAsyncTask().execute(this);
-
-        //startActivity(intent);
-        //Toast.makeText(this, javaJoke.getJoke(), Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -72,8 +64,6 @@ public class MainActivity extends AppCompatActivity implements com.udacity.gradl
         if(mIdlingResource != null){
             mIdlingResource.setIdleState(true);
         }
-
-        //Toast.makeText(this, "I'm testing this", Toast.LENGTH_SHORT).show();
     }
 
 
